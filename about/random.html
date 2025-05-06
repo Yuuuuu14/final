@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: peachpuff;
+                cursor: pointer;
+            }
+            .lunch{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 100px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 50px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="lunch">
+        <p id="result">loading...</p>
+        
+        
+        <script>
+        //randomly get to the text I made from the last page
+          const params = new URLSearchParams(window.location.search);
+          const text = params.get('text');
+
+          document.getElementById('result').textContent = text || 'No content';
+        
+        //click event to back to the former page 
+            //chatgpt does help this java script part   
+          document.addEventListener("click", function() {
+          window.location.href ="/final/about/eat.html";
+    });
+  </script>
+ 
+    </body>
+    
+</html>

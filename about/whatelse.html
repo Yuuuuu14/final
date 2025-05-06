@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="contact form.css">
+    </head>
+    <body>
+        <ul>
+            <li><a class="active" href="/final/index.html">Home</a></li>
+            <li><a href="/final/about/diy.html">When</a></li>
+            <li><a href="/final/about/eat.html">Eat</a></li>
+            <li><a href="/final/about/do.html">Do</a></li>
+          </ul>
+        <div class="else">
+        <h1>What else do you want to leave to fate?</h1>
+        <form action="https://formspree.io/f/mzzrelyd" class="fs-form" target="_top" method="POST">
+        <div class="fs-field">
+        <label class="fs-label" for="name">Your Name</label>
+        <input class="fs-input" id="name" name="name" required />
+        </div>
+        <div class="fs-field">
+        <label class="fs-label" for="email">Email</label>
+        <input class="fs-input" id="email" name="email" required />
+        <p class="fs-description">
+            This will help me respond to your query via an email.
+        </p>
+        </div>
+        <div class="fs-field">
+        <label class="fs-label" for="message">Message</label>
+        <textarea
+            class="fs-textarea"
+            id="message"
+            name="message"
+            required
+        ></textarea>
+        <p class="fs-description">What would you like to discuss?</p>
+        </div>
+        <div class="fs-button-group">
+        <button class="fs-button" type="submit">Submit</button>
+        </div>
+        </form>
+        </div>
+        </body>
+        </html>

@@ -1,0 +1,133 @@
+<html>
+    <head>
+    <style>
+        body{
+            background-color: salmon;
+            justify-content: space-around;
+            padding-top: 50px;
+        }
+       
+        /* guideline */
+        ul {
+                 list-style-type: none;
+                 margin: 0;
+                 padding: 0;
+                 overflow: hidden;
+                 background-color: rgb(252, 205, 200);
+                 position: fixed;
+                 top: 0;
+                 width: 100%;
+                 left: 0;
+                }
+                li {
+                    float:right;
+                }
+                li a {
+                    display: block;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: black;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-size:large;
+                }
+                li a:hover {
+                    background-color: salmon;
+                }
+
+        /* typewriting effect */
+        .typewriting-wrapper {
+            width: 100%;
+            text-align: center; 
+            padding-top: 90px;
+            }
+            .typewriting {
+                display: inline-block; 
+                font-family: 'Courier New', monospace;
+                font-size: 38px;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 2px solid black;
+
+                width: 0;
+                animation: typing 2s steps(18) forwards, blink 0.7s step-end infinite;
+            }
+            @keyframes typing {
+            from { width: 0 }
+            to { width: 18ch } 
+            }
+
+            @keyframes blink {
+            50% { border-color: transparent; }
+            }
+            /* end of typewriting effect */
+
+
+        .eat{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                padding-top: 100px;
+            }
+            button{
+                cursor: pointer;
+                width: 180px;
+                border-width: 5px;
+                box-shadow: 12px 12px 20px rgba(2, 2, 36, 0.5), 
+                        24px 24px 30px rgba(2, 2, 36, 0.3), 
+                        36px 36px 40px rgba(2, 2, 36, 0.1);
+                margin-top: 10px; 
+                margin-bottom: 10px; 
+                font-size: 25px; 
+                font-family:monospace;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a class="active" href="/final/index.html">Home</a></li>
+            <li><a href="/final/about/diy.html">DIY</a></li>
+            <li><a href="/final/about/eat.html">Eat</a></li>
+            <li><a href="/final/about/do.html">Do</a></li>
+          </ul>
+
+        <div class="typewriting-wrapper">
+            <div class="typewriting">What to eat later?</div>
+        </div>
+
+        <div class="eat">
+            <div class="breakfast">
+                <button onclick="goToRandomPage('breakfast')">breakfast</button>
+            </div>
+
+            <div class="lunch">
+            <button onclick="goToRandomPage('lunch')">lunch</button>
+            </div>
+
+            <div class="dinner">
+            <button onclick="goToRandomPage('dinner')">dinner</button>
+            </div> 
+       </div>
+
+       <script>
+        const database = {
+            breakfast: ["sandwiches🥪","bread🍞","salad🥗","bagel","pancake🥞","croissant🥐","bacon🥓 and egg🍳"],
+            lunch: ["spaghatti🍝", "pizza🍕", "sushi🍣", "salad🥗","noodle🍜","pho🍲","sandwiches🌮","hamburger🍔","fried chicken🍗"],
+            dinner: ["sushi🍣","spaghetti🍝","pizza🍕","salad🥗","noodle🍜","pho🍲","sandwiches🌮","hamburger🍔","fried chicken🍗"]
+            };
+        
+        function goToRandomPage(category) {
+        const quotes = database[category];
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const selected = quotes[randomIndex];
+
+        //finding tutorials online and modifying them to fit my needs
+        window.location.href = `random.html?text=${encodeURIComponent(selected)}`;
+        }
+       </script>
+    </body>
+</html>

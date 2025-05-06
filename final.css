@@ -1,0 +1,198 @@
+body {
+    background-color: bisque;
+    padding-top: 50px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(252, 205, 200);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+  
+  li {
+    float:right;
+  }
+  
+  li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:large;
+  }
+
+  li a:hover {
+    background-color: salmon;
+  }
+  
+  .guideline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* animation */
+  @keyframes grow-shrink {
+    25%,
+    75% {
+      scale: 100%;
+    }
+  
+    50% {
+      scale: 200%;
+      color: magenta;
+    }
+  }
+  
+  h1 {
+    animation-duration: 2s;
+    animation-name: slide-in;
+  }
+  h1 span {
+    display: inline-block;
+    animation-duration: 3s;
+    animation-name: grow-shrink;
+  }
+  
+  @keyframes slide-in {
+    from {
+      translate: 150vw 0;
+      scale: 200% 1;
+    }
+  
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+    }
+  }
+  
+  @keyframes grow-shrink {
+    25%,
+    75% {
+      scale: 100%;
+    }
+  
+    50% {
+      scale: 200%;
+      color: rgb(66, 111, 18);
+    }
+  }
+ /* end of animation */
+
+ .text{
+  padding: 14em;
+ }
+/* this is the do part css */
+  .guide1 {
+    width: 300px;
+    height: 300px;
+    background-color: #E37F71; 
+    background-image: url("about/do.jpg"); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.5s ease;
+}
+
+  .guide1:hover{
+    background-image: none;
+    transform: scale(1.2);
+    transition: 2s;
+  }
+  .center-link {
+    color: white;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 105px 20px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+/* end of the "what to do next" part css*/
+  
+/* this is the eat part css */
+  .guide2 {
+    width: 300px;
+    height: 300px;
+    background-color: #E39371; 
+    background-image: url("about/eat.png"); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.5s ease;
+}
+
+  .guide2:hover{
+    background-image: none;
+    transform: scale(1.2);
+    transition: 2s;
+  }
+  .center-link2 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 105px 20px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+  /* this is the end of the eat part css */
+
+  /* this is the DIY your selection part css */
+  .guide3 {
+    width: 300px;
+    height: 300px;
+    background-color: #E3B871; 
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/554/841/original/lightbulb-vector-icon.jpg"); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.5s ease;
+}
+  .guide3:hover{
+    background-image: none;
+    transform: scale(1.2);
+    transition: 2s;
+  }
+  .center-link3 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 105px 20px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+  /* this is the end of the DIY part css */
+
+  .whatelse{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+  button{
+    font-size: 30pt;
+    cursor: pointer;
+    background-color:rgb(255, 193, 210);
+    font-family: cursive;
+  }

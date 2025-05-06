@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #E6AF9A;
+                padding-top: 50px;
+            }
+
+            /* guideline */
+            ul {
+                 list-style-type: none;
+                 margin: 0;
+                 padding: 0;
+                 overflow: hidden;
+                 background-color: rgb(252, 205, 200);
+                 position: fixed;
+                 top: 0;
+                 width: 100%;
+                 left: 0;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-size:large;
+                }
+                li {
+                    float:right;
+                }
+                li a {
+                    display: block;
+                    padding: 10px;
+                }
+                li a:hover {
+                    background-color:#E6AF9A;
+                }
+            /* guideline */
+
+            /* typewriting effect */
+            .typewriting-wrapper {
+            width: 100%;
+            text-align: center; 
+            padding-top: 90px;
+            }
+            .typewriting {
+                display: inline-block; 
+                font-family: 'Courier New', monospace;
+                font-size: 38px;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 2px solid black;
+
+                width: 0;
+                animation: typing 3s steps(17) forwards, blink 0.7s step-end infinite;
+            }
+            @keyframes typing {
+            from { width: 0 }
+            to { width: 17ch } 
+            }
+
+            @keyframes blink {
+            50% { border-color: transparent; }
+            }
+            /* end of typewriting effect */
+
+            button{
+                width:150px;
+                cursor: pointer;
+            }
+            .button2{
+                width:50px
+            }
+            label{
+                font-size: 15px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .container{
+                display:flex;
+                height:auto;
+            }
+            .left{
+                display: flex;
+                flex-direction: column;
+                height:auto;
+                width:50%;
+                padding-left:60px;
+                padding-top: 20px;
+            }
+            .right{
+                display:flex;
+                width:50%;
+                padding-left:60px;
+                padding-right: 60px;
+                padding-top: 20px;
+                flex-direction: column;
+            }
+            .rightresult {
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+                margin-top: 20px;
+                padding-bottom: 170px;
+                border-radius: 5px;
+            }
+            img{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a class="active" href="/final/index.html">Home</a></li>
+            <li><a href="/final/about/diy.html">DIY</a></li>
+            <li><a href="/final/about/eat.html">Eat</a></li>
+            <li><a href="/final/about/do.html">Do</a></li>
+          </ul>
+
+        <div class="typewriting-wrapper">
+            <div class="typewriting">What to do next?</div>
+        </div>
+
+        <div class="container">
+        <!-- user input by himself -->
+        <div class="left"><h2>Already have something in your mind and just hard to decide?</h2>
+        <label>Type in what to do next and use "," to seperate</label><br>
+        <input type="text" id="userInput" placeholder="for example: reading, eating, playing games"><br>
+         <button onclick="Randomwithinput()">Random selection</button><br>
+         <button class="button2" onclick="resetAll()">Reset</button>
+         <div class="result" id="resultBox"></div>
+        </div>
+
+        <!-- do randon in my database -->
+        <div class="right">
+            <h2>Or just let me decide for you!</h2>
+            <p>press and throw the coin~</p>
+            <img id="coin-button" src="https://th.bing.com/th/id/R.ffbb1d5641c4ac81e451f4b9354e895f?rik=WKULPGX%2bLtxjtQ&riu=http%3a%2f%2fzms-uploads.oss-cn-qingdao.aliyuncs.com%2f2013%2f06%2f727440b5jw1f3hyfy0mijg209o05g000.gif&ehk=Ka03y63WsIXD6C7w1uPp1KgTaPPmAotySedI5z1m85U%3d&risl=&pid=ImgRaw&r=0"/>
+        
+            <div class="rightresult" id="result">Throw the coin</div>
+
+        </div>
+       
+        </div>
+        <script>
+        // left
+
+            function Randomwithinput() {
+            const input = document.getElementById("userInput").value;
+            const options = input.split(',').map(s => s.trim()).filter(s => s !== "");
+
+            // if they input nothing
+            if (options.length === 0) {
+                document.getElementById("resultBox").textContent = "please at least type in one option";
+                return;
+            }
+            // show the result
+            const randomChoice = options[Math.floor(Math.random() * options.length)];
+            document.getElementById("resultBox").textContent = "What to do next is : " + randomChoice;
+            }
+            // reset the input box and result box
+            function resetAll() {
+            document.getElementById("userInput").value = "";
+            document.getElementById("resultBox").innerText = "";
+            }
+
+        // end of left
+
+        // right
+            const database = ["Reading📕", "Writing✍", "Movie🎦", "Games🎮","Swimming🏊","Badminton🏸","Jogging🏃","Shopping🛒","Hanging out with friends👬👭👫","Sleep💤","Coding(just kidding lol)","Bath🛀","Eat🍴"];
+            const button = document.getElementById('coin-button');
+            const resultDiv = document.getElementById('result');
+            button.addEventListener('click', () => {
+            button.src = ''; 
+            button.src="coin.gif";
+            const randomIndex = Math.floor(Math.random() * database.length);
+            const result = database[randomIndex];
+            resultDiv.textContent = result;
+  });
+        </script>
+
+    </body>
+</html>
